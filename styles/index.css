@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+html, button, form {
+    font-family: 'Rubik', sans-serif;
+}
+
+html, body, #wrapper {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #0B132A;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#wrapper {
+    background: linear-gradient(#F6FAFD, #FFFFFF);
+    padding: 30px 100px;
+}
+
+.bold-span {
+    font-weight: 700;
+}
+
+.medium-span {
+    font-weight: 500;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+}
+
+.brand-name {
+    font-weight: 500;
+    font-size: 32px;
+    margin-left: 15px;
+}
+
+.navigation-links {
+    display: flex;
+    align-items: center;
+}
+
+.navigation-link {
+    font-size: 22px;
+    margin-right: 40px;
+}
+
+.navigation-button {
+    background-color: #0B132A;
+    color: #E5E5E5;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-button img {
+    margin-right: 10px;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 85px;
+}
+
+#main .navigation-button {
+    display: inline;
+}
+
+#main .navigation-button:hover {
+    transition: all 0.12s ease;
+    filter: brightness(0.8);
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 70px;
+}
+
+.description {
+    font-size: 16px;
+    color: #4F5665;
+    line-height: 30px;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+.partners-container {
+    margin-top: 20px;
+}
+
+.partners-container > img {
+    margin-right: 30px;
+}
+
+#servicos {
+    display: flex;
+    padding: 0px 50px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.servicos-title {
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin-top: 0;
+    line-height: 50px;
+}
+
+.servicos-description {
+    font-size: 16px;
+    color: #4F5665;
+    line-height: 30px;
+    width: 430px;
+    margin-bottom: 15px;
+}
+
+.check {
+    display: flex;
+    color: #4F5665;
+    font-size: 14px;
+}
+
+.check img {
+    margin-right: 12px;
+}
+
+#info-overlay {
+    margin: 0 50px;
+    height: 200px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.1));
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    margin-bottom: 60px;
+}
+
+.card {
+    display: flex;
+}
+
+.card img {
+    background-color: #3F3D56;
+    padding: 20px;
+    border-radius: 100px;
+    margin-right: 35px;
+    }
+
+.card-title {
+    font-size: 25px;
+    color: #0B132A;
+    font-weight: 700;
+}
+
+.card-subtitle {
+    font-size: 20px;
+    color: #4F5665;
+}
+
+#precos {
+    text-align: center;
+}
+
+.pricing-title {
+    color: #0B132A;
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.pricing-subtitle {
+    color: #4F5665;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    margin-bottom: 30px;
+}
+
+.price-card {
+    height: 760px;
+    width: 330px;
+    background-color: #fff;
+    border: 2px solid #DDDDDD;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-0.6rem);
+}
+
+.price-top > img {
+    margin: 40px 0;
+}
+
+.price-card-name {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.price-good {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.price-good img {
+    margin-right: 14px;
+}
+
+.price-good-text {
+    font-size: 14px;
+    color: #4F5665;
+}
+
+.price-button {
+    background-color: #fff;
+    border: 3px solid #4EA584;
+    color: #4EA584;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 45px;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 50px;
+}
+
+.price-button:hover {
+    transition: all 0.12s ease;
+    background-color: #4EA584;
+    color: #FFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.price-value-title {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.sub {
+    color: #4F5665;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.light {
+    color: #4F5665;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.unique {
+    margin-bottom: 20px;
+}
+
+.ad-container {
+    margin: 0 50px;
+    padding: 20px 0;
+    border: 2px solid #DDDDDD;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 25px;
+    color: #4F5665;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.bussiness-contact {
+    font-size: 16px;
+    color: #4F5665;
+}
+
+footer {
+    background-color: #F8F8F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    color: #AFB5C0;
+    font-size: 18px;
+}

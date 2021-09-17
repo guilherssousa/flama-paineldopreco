@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+html, input, button {
+    font-family: 'Rubik', sans-serif;
+}
+
+html, body, #wrapper {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+#wrapper {
+    background-color: #F6FAFD;
+    padding: 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: 2px solid #DDDDDD;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    max-width: 340px;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 30px;
+    color: #0B132A;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.form-input {
+    background-color: #e6e6e6;
+    border: 0;
+    outline: 0;
+    border-radius: 2px;
+    padding: 15px 20px;
+    width: 300px;
+    display: block;
+    margin: 10px 0;
+}
+
+.input-column {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-column .form-input {
+    width: 120px;
+}
+
+.medium {
+    font-weight: 700;
+}
+
+.form-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-button {
+    width: 100%;
+    background-color: #0B132A;
+    color: #E5E5E5;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 15px;
+    outline: none;
+}
+
+a.form-text {
+    text-decoration: underline;
+}
+
+.error-message {
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 1px solid red;
+    margin-bottom: 1em;
+    padding: 1em 20px;
+}
+
+.success-message {  
+    background-color: rgba(100, 255, 100, 0.5);
+    border-radius: 5px;
+    border: 1px solid green;
+    margin-bottom: 1em;
+    padding: 1em 20px;
+}
