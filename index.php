@@ -1,237 +1,178 @@
-<?php
-    include('./utils/conexao.php');
-
-    $button = 'Conheça agora';
-    $navbutton = 'Entrar';
-    $buttonLink = './login.php';
-
-    session_start();
-
-    if(isset($_SESSION['usuario'])) {
-        $button = 'Painel de controle';
-        $navbutton = 'Painel';
-
-        if($_SESSION['usuario']['nivel'] == 1) {
-            $buttonLink = './admin.php';
-        } else {
-            $buttonLink = './painel.php';
-        }
-    };
-
-    function fillData($mysqli, $table) {
-        $sql = "SELECT COUNT(*) AS n_$table FROM $table";
-        $object = $mysqli->query($sql);
-        if($object) {
-            return $object->fetch_assoc()["n_$table"];
-        } else {
-            return 0;
-        }
-    }
-    
-    $entregas = fillData($mysqli, 'entrega');
-    $usuarios = fillData($mysqli, 'usuario');
-    $ebox = fillData($mysqli, 'ebox');
-?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./styles/index.css">
-        <title>EntregaFácil</title>
+        <link rel="preload" href="/fonts/Dystopian Regular.ttf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Dystopian Bold.ttf" as="font" crossOrigin="" />
+        <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="./styles/global.css">
+        <link rel="stylesheet" href="./styles/home.css">
+        <title>Início | Painel do Preço</title>
     </head>
     <body>
-        <div id="wrapper">
-            <nav>
-                <a class="brand-container" href="index.php">
-                    <img src="./assets/logo.svg" alt="EntregaFácil">
-                    <p class="brand-name">Entrega<span class="bold-span">Fácil</span></p>
+        <nav id="navbar">
+            <div class="brand-container">
+                <a href="./" class="brand-logo">
+                    <img src="./assets/logo.svg" alt="Painel do Preço">
+                    <span class="logo-typo">
+                        <span>painel do preço</span>
+                    </span>
                 </a>
-                <div class="navigation-links">
-                    <a class="navigation-link" href="#servicos">Serviços</a>
-                    <a class="navigation-link" href="#precos">Preços</a>
-                    <a class="navigation-button" href="<?=$buttonLink?>">
-                        <img src="./assets/login.svg" alt="<?=$navbutton?>">
-                        <?=$navbutton?>
-                    </a>
-                    <img src="./assets/dark-mode.svg" alt="Modo Escuro">
-                </div>
-            </nav>
-
-            <div id="main">
-                <div class="main-info-container">
-                    <p class="title">Nós podemos <br> <span class="bold-span">facilitar sua vida.</span></p>
-                    <p class="description">
-                        Desfrute do nosso serviço de entregas para áreas restritas via pontos estratégicos e <span class="medium-span">diga adeus a dor de cabeça na hora de comprar online.</span></p>
-                    </p>
-                    <a class="navigation-button" href="<?=$buttonLink?>">
-                        <img src="./assets/login.svg" alt="Entrar">
-                        <?=$button?>
-                    </a>
-                </div>
-                <div class="main-hero-container">
-                    <img src="./assets/main-hero.svg" alt="Principal">
-                </div>
             </div>
-
-            <div id="servicos">
-                <div class="servicos-hero-container">
-                    <img src="./assets/servicos-hero.svg" alt="Servicos">
-                </div>
-                <div class="servicos-info-container">
-                    <p class="servicos-title">Receber suas compras<br>nunca foi tão fácil.</p>
-                    <p class="servicos-description">Você poderá definir seu endereço fora de casa para compras e evitar aquela burocracia de lidar com taxas de entrega mais alta ou área de risco.</p>
-                    <div class="check-list">
-                        <div class="check">
-                            <img src="./assets/check.svg" alt="Vantagens">
-                            <p class="check-text">Proteção de endereço físico</p>
-                        </div>
-                        <div class="check">
-                            <img src="./assets/check.svg" alt="Vantagens">
-                            <p class="check-text">Economia na taxa de frete</p>
-                        </div>
-                        <div class="check">
-                            <img src="./assets/check.svg" alt="Vantagens">
-                            <p class="check-text">Logística eficiente</p>
-                        </div>
-                        <div class="check">
-                            <img src="./assets/check.svg" alt="Vantagens">
-                            <p class="check-text">Compartilhamento de caixa</p>
-                        </div>  
-                    </div>
-                </div>
+            <div class="navigation-container">
+                <a href="lojas-verificadas.php" class="link">
+                    <img src="./assets/shield.svg" alt="Lojas confiáveis">
+                    <span>Lojas verificadas</span>
+                </a>
+                <a href="perguntas-frequentes.php" class="link">
+                    <img src="./assets/q-a.svg" alt="Perguntas frequentes">
+                    <span>Perguntas frequentes</span>
+                </a>
+                <a href="login.php" class="link">
+                    <img src="./assets/store.svg" alt="Anuncie aqui">
+                    <span>Anuncie aqui</span>
+                </a>
             </div>
-
-            <div id="info-overlay">
-                <div class="card">
-                    <img src="./assets/user.svg" alt="Mais de <?= $usuarios ?> usuários">
-                    <div class="card-item">
-                        <div class="card-title"><?= $usuarios ?></div>
-                        <div class="card-subtitle">Clientes registrados</div>
-                    </div>
+        </nav>
+        <main id="home-main">
+            <div class="info-container">
+                <div>
+                    Procurando algo pelo 
+                    <span class="bold">
+                        melhor preço?
+                    </span>
+                    <span class="underline">
+                        Deixa com a gente.
+                    </span> ;)
                 </div>
-                <div class="card">
-                    <img src="./assets/server.svg" alt="Mais de <?= $ebox ?> pontos de retirada">
-                    <div class="card-item">
-                        <div class="card-title"><?= $ebox ?></div>
-                        <div class="card-subtitle">Pontos de retirada</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/pin.svg" alt="Mais de <?= $entregas ?> entregas">
-                    <div class="card-item">
-                        <div class="card-title"><?= $entregas ?></div>
-                        <div class="card-subtitle">Entregas feitas</div>
-                    </div>
-                </div>
+                <form action="#">
+                    <input
+                        type="search"
+                        name="query"
+                        autocomplete="off"
+                        placeholder="Pesquise usando palavras-chave. Ex: smartphones"
+                    >
+                    <button type="submit">Vamos lá!</button>
+                </form>
+                <div>
+                    Mais de <span class="underline">1.000 produtos</span> listados.
+                </div>        
             </div>
-
-            <div id="precos">
-                <div class="pricing-title">Escolha um plano</div>
-                <div class="pricing-subtitle">Nós vamos te ajudar a achar um plano que se encaixe no seu bolso.</div>
-
-                <div class="price-container">
-                    <div class="price-card">
-                        <div class="price-top">
-                            <img src="./assets/individual.svg" alt="Plano Individual">
-
-                            <div class="price-card-name medium-span">Plano Individual</div>
-                            <div class="price-goods-list">
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">5 encomendas grátis ao mês*</div>
-                                </div>
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">Limite de 2 dispositivos conectado</div>
-                                </div>
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">Retirada em apenas um ponto por vez</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="price-bottom">
-                            <div class="price-value-title unique medium-span">Grátis</div>
-                            <button class="price-button">Selecionar</button>
-                        </div>
+            <div class="hero-container">
+                <img src="./assets/hero.png" alt="Vigia do preço">
+            </div>
+        </main>
+        <main id="home-best-awards">
+            <h2>Melhores produtos por avaliação dos usuários</h2>
+        </main>
+        <div class="slider">
+            <div class="slider-container">
+                <div class="item">
+                    <div class="product-image" style="background-image: url('./assets/notebook.jpg');">
                     </div>
-                    <div class="price-card">
-                        <div class="price-top">
-                            <img src="./assets/family.svg" alt="Plano Família">
+                    <h3 class="product-name">iPhone 7 32GB Preto Matte</h3>
+                    <span class="product-store">Vendido por Apolo Informática</span>
 
-                            <div class="price-card-name medium-span">Plano Premium</div>
-                            <div class="price-goods-list">
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">10 encomendas grátis ao mês*</div>
-                                </div>
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">Limite de 4 dispositivos conectados</div>
-                                </div>
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">Retirada em até três pontos simultâneos</div>
-                                </div>
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">Programa de Fidelidade Básico</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="price-bottom">
-                            <div class="price-value-title medium-span">R$29,99<span class="sub">/mês</span></div>
-                            <div class="light">(ou <span class="sub">R$345,00</span>/ano)</div>
-                            <button class="price-button">Selecionar</button>
-                        </div>
+                    <div class="price-and-awards">
+                        <span class="product-awards">
+                            <img src="./assets/star.svg" alt="Avaliação do produto" />
+                            4.8/5.0
+                        </span>
+                        <span class="product-price">R$ 1.000,00</span>
                     </div>
-                    <div class="price-card">
-                        <div class="price-top">
-                            <img src="./assets/bussiness.svg" alt="Plano Pequeno Negócio">
-
-                            <div class="price-card-name medium-span">Plano Pequeno Negócio</div>
-                            <div class="price-goods-list">
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">25 encomendas grátis ao mês*</div>
-                                </div>
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">Limite de 6 dispositivos conectados</div>
-                                </div>
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">Retirada em até cinco pontos simultâneos</div>
-                                </div>
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text">Programa de Fidelidade Premium</div>
-                                </div>
-                                <div class="price-good">
-                                    <img src="./assets/check-2.svg" alt="Vantagens">
-                                    <div class="price-good-text"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="price-bottom">
-                            <div class="price-value-title medium-span">R$59,99<span class="sub">/mês</span></div>
-                            <div class="light">(ou <span class="sub">R$620,00</span>/ano)</div>
-                            <button class="price-button">Selecionar</button>
-                        </div>
-                    </div>  
                 </div>
+                <div class="item">
+                    <div class="product-image" style="background-image: url('./assets/notebook.png');">
+                    </div>
+                    <h3 class="product-name">iPhone 7 32GB Preto Matte</h3>
+                    <span class="product-store">Vendido por Apolo Informática</span>
 
-                <span class="bussiness-contact">Para Planos Empresariais: Envie um email para empresarial@entregafacil.com.br e iremos fazer um orçamento. </span>
+                    <div class="price-and-awards">
+                        <span class="product-awards">
+                            <img src="./assets/star.svg" alt="Avaliação do produto" />
+                            4.8/5.0
+                        </span>
+                        <span class="product-price">R$ 1.000,00</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product-image" style="background-image: url('./assets/iphone-12.png');">
+                    </div>
+                    <h3 class="product-name">iPhone 7 32GB Preto Matte</h3>
+                    <span class="product-store">Vendido por Apolo Informática</span>
+
+                    <div class="price-and-awards">
+                        <span class="product-awards">
+                            <img src="./assets/star.svg" alt="Avaliação do produto" />
+                            4.8/5.0
+                        </span>
+                        <span class="product-price">R$ 1.000,00</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product-image" style="background-image: url('./assets/iphone-12.png');">
+                    </div>
+                    <h3 class="product-name">iPhone 7 32GB Preto Matte</h3>
+                    <span class="product-store">Vendido por Apolo Informática</span>
+
+                    <div class="price-and-awards">
+                        <span class="product-awards">
+                            <img src="./assets/star.svg" alt="Avaliação do produto" />
+                            4.8/5.0
+                        </span>
+                        <span class="product-price">R$ 1.000,00</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <footer>
-            ©2021 EntregaFácil Rua Capote Valente, 39 Pinheiros – CEP 05409-000 – São Paulo, SP   
+        <main id="home-categories">
+            <h2>Categorias</h2>
+            <span>Quer descobrir o que as lojas estão vendendo? Aproveite as categorias!</span>
+        </main>
+        <footer id="footer">
+            <div style="display: flex;">
+                <div id="footer-main" class="brand-container">
+                        <a href="./" class="brand-logo">
+                            <span class="logo-typo">
+                                <span>painel do preço</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="navigation-container">
+                        <a href="lojas-verificadas.php" class="link">
+                            <span>Lojas verificadas</span>
+                        </a>
+                        <a href="#" class="link">
+                            <span>Perguntas frequentes</span>
+                        </a>
+                        <a href="#" class="link">
+                            <span>Anuncie aqui</span>
+                        </a>
+                    </div>
+                </div>
+                <div id="footer-social">
+                    <p>R. Apólo, 661 - Pavuna, Rio de Janeiro - RJ, 21520-340</p>
+                    <div class="social-media">
+                        <a href="#" class="link">
+                            <img src="./assets/Facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="#" class="link">
+                            <img src="./assets/Twitter.svg" alt="Twitter">
+                        </a>
+                        <a href="#" class="link">
+                            <img src="./assets/Instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="#" class="link">
+                            <img src="./assets/Linkedin.svg" alt="Linkedin">
+                        </a>
+                        <a href="#" class="link">
+                            <img src="./assets/Github.svg" alt="Github">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

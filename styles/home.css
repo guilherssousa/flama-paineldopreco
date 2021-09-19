@@ -1,0 +1,213 @@
+#home-main {
+    background: radial-gradient(100% 197.75% at 100% 100%, #7200D3 0%, #8934CC 48.96%, #00A1D3 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: inherit;
+    overflow: hidden;
+}
+
+.info-container, .hero-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-container > div {
+    font-family: 'Dystopian Regular', 'Poppins', sans-serif;
+    font-size: 48px;
+    width: 480px;
+}
+
+.info-container > div > span.bold {
+    font-family: 'Dystopian Bold', 'Poppins', sans-serif;
+}
+
+.info-container form {
+    margin-top: 20px;
+    display: flex;
+}
+
+.info-container form input {
+    width: 400px;
+    height: 50px;
+    padding: 0 1.5em;
+    outline: 0;
+    border: 0;
+    border-radius: 10px 0 0 10px;
+}
+
+.info-container form button {
+    height: 50px;
+    border: 0;
+    border-radius: 0 10px 10px 0;
+    padding: 0 1em;
+    outline: none;
+    cursor: pointer;
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Dystopian Bold', 'Poppins', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.info-container form button:hover {
+    background-color: #333;
+}
+
+.info-container form + div {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.hero-container img {
+    width: 500px;
+    animation: hero-animation 5s infinite;
+}
+
+#home-best-awards {
+    padding: 3em 4em 1em 4em;
+}
+
+#home-best-awards h2 {
+    margin-bottom: 1em;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.slider-container {
+    padding: 0 4em;
+    display: flex;
+    row-gap: 20px;
+    column-gap: 40px;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.item {
+    cursor: pointer;
+}
+
+.product-image {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background-color: #8934CC;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+
+.product-image:hover {
+    filter: brightness(0.7);
+}
+
+.product-store {
+    color: #a9a9a9;
+}
+
+.price-and-awards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-awards {
+    display: flex;
+}
+
+.product-awards img {
+    width: 20px;
+    margin-right: 6px;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#home-categories {
+    padding: 3em 4em;
+}
+
+#home-categories > span {
+    color: #a9a9a9;
+}
+
+@keyframes hero-animation {
+    0% {
+        transform: scale(1.0) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.05) rotate(7deg);
+    }
+    0% {
+        transform: scale(1.0) rotate(0deg);
+    }
+}
+
+@media (max-width: 900px) {
+    #home-main {
+        padding: 2em 0;
+    }
+
+    .info-container form {
+        flex-direction: column;
+    }
+
+    .info-container > div {
+        text-align: center;
+        padding: 0 4em;
+        font-family: 'Dystopian Regular', 'Poppins', sans-serif;
+        font-size: 24px;
+        width: 480px;
+    }
+
+    .info-container form input {
+        margin-top: 20px;
+        width: 300px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .info-container form button {
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero-container {
+        display: none;
+    }
+
+    #home-best-awards {
+        padding: 2em 2em 0 2em;
+    }
+
+    #home-categories {
+        padding: 2em;
+    }
+
+    .slider-container {
+        padding: 0 2em;
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+        column-gap: 20px;
+    }
+
+    .product-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .slider::-webkit-scrollbar {
+        display: none;
+    }
+}

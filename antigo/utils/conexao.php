@@ -2,7 +2,7 @@
     $HOST = 'localhost';
     $USER = 'root';
     $PASS = '';
-    $BASE = 'paineldopreco';
+    $BASE = 'entregafacil';
 
     $mysqli = new mysqli($HOST, $USER, $PASS, $BASE);
 

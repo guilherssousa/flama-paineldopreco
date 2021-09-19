@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,400&display=swap');
+
+@font-face {
+    font-family: 'Dystopian Regular';
+    src: url("/fonts/Dystopian Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dystopian Bold';
+    src: url("/fonts/Dystopian Bold.ttf");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+html, body {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, input, button {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+*,
+:after,
+:before {
+    box-sizing:border-box;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 3em;
+}
+
+a.brand-logo {
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a.brand-logo > img {
+    width: 48px;
+}
+
+.logo-typo {
+    font-family: 'Dystopian Bold', 'Poppins', sans-serif;
+    color: #121212;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-typo > span {
+    margin-left: 16px;
+    font-size: 32px;
+}
+
+.navigation-container {
+    display: flex;
+    column-gap: 50px;
+}
+
+.navigation-container a {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    text-decoration: none;
+}
+
+.navigation-container a > img {
+    width: 25px;
+}
+
+.navigation-container a > span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #121212;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+#footer {
+    background-color: #e8e8e8;
+    border-top: 1px solid #d6d6d6;
+    padding: 2em 4em;
+    color: #838383;
+}
+
+#footer .logo-typo span {
+    margin-left: 0;
+}
+
+#footer > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer > div + div {
+    margin-top: 10px;
+}
+
+#footer span {
+    color: #838383 !important;
+}
+
+#footer img {
+    color: #838383;
+}
+
+#footer div + div {
+    display: flex;
+    align-items: center;
+}
+
+#footer .social-media a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#footer .social-media a + a {
+    margin-left: 8px;
+}
+
+@media (max-width: 1000px) {
+    a.brand-logo > img {
+        width: 32px;
+    }
+    .navigation-container {
+        column-gap: 24px;
+    }
+    .logo-typo {
+        display: none;
+    }
+    .navigation-container a span {
+        display: none;
+    }
+    #footer div + div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+}

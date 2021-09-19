@@ -1,0 +1,78 @@
+#about-title {
+    background: radial-gradient(100% 197.75% at 100% 100%, #7200D3 0%, #8934CC 48.96%, #00A1D3 100%);
+    text-align: center;
+    color: #fff;
+    width: inherit;
+    overflow: hidden;
+    padding: 2em;
+    font-family: 'Dystopian Regular', 'Poppins', sans-serif;
+}
+
+#about-title h1 {
+    font-family: 'Dystopian Bold', 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+
+.about-text {
+    color: #121212;
+    width: 100%;
+    padding: 2em 15em;
+    font-size: 18px;
+}
+
+.about-text > div {
+    margin-bottom: 8px;
+}
+
+.about-text > .about-image {
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    outline: hidden;
+}
+
+.about-text > .about-image img {
+    width: 640px;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.about-text p + p {
+    margin-top: 10px;
+}
+
+.about-text p a {
+    color: #121212;
+    font-weight: bold;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-radius: 4px;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+@media (max-width: 900px) {
+    .about-text {
+        padding: 2em 3em;
+    }
+}

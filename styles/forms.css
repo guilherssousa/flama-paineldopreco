@@ -1,0 +1,105 @@
+#form-top {
+    background: radial-gradient(100% 197.75% at 100% 100%, #7200D3 0%, #8934CC 48.96%, #00A1D3 100%);
+    text-align: center;
+    color: #fff;
+    width: inherit;
+    overflow: hidden;
+    padding: 2em;
+    font-family: 'Dystopian Regular', 'Poppins', sans-serif;
+}
+
+#form-top h1 {
+    font-family: 'Dystopian Bold', 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+
+#form-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 4em 0;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.input-group label {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    height: 60px;
+    padding: 0 1.5em;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+}
+
+.input-group select {
+    height: 60px;
+    padding: 0 1.5em;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+}
+
+.secondary-label {
+    margin-top: 10px;
+    color: #858585;
+}
+
+.input-button input::-webkit-input-placeholder {
+    font-size: 18px;
+}
+.input-button input::-ms-input-placeholder {
+    font-size: 18px;
+}
+
+.input-button button {
+    width: 400px;
+    height: 60px;
+    font-size: 18px;
+    border: 0;
+    border-radius: 10px;
+    padding: 0 1em;
+    outline: none;
+    cursor: pointer;
+    background: radial-gradient(100% 197.75% at 100% 100%, #7200D3 0%, #8934CC 48.96%, #00A1D3 100%);
+    color: #fff;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.input-button button:hover {
+    filter: brightness(0.8);
+}
+
+form p {
+    margin-top: 20px;
+    width: 400px;
+}
+
+form p a {
+    color: #121212;
+}
+
+input[type="checkbox"] {
+    margin: 10px 0;
+}
+
+@media (max-width: 900px) {
+    .input-button button {
+        width: 300px;
+    }
+
+    form p {
+        margin-top: 10px;
+        max-width: 300px;
+    }
+}
